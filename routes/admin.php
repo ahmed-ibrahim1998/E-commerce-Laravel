@@ -19,10 +19,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 define('PAGINATION_COUNT',10);
-Route::group(['namespace' => 'Admin', 'middleware' => 'guest:admin'], function () {
-    Route::get('login', [LoginController::class,'getLogin'])->name('get.admin.login');
-    Route::post('login', [LoginController::class,'login'])->name('admin.login');
-});
+
 Route::group(['namespace' => 'Admin','middleware'=>'auth:admin'],function() {
     Route::get('/',[DashboardController::class,'index'])->name('admin.dashboard');
 
@@ -76,10 +73,10 @@ Route::group(['namespace' => 'Admin','middleware'=>'auth:admin'],function() {
 });
 
 
-//Route::group(['middleware'=>'guest:admin'],function (){
-//    Route::get('login',[LoginController::class,'getLogin'])->name('get.admin.login');
-//    Route::post('login',[LoginController::class,'login'])->name('admin.login');
-//});
+Route::group(['namespace' => 'Admin', 'middleware' => 'guest:admin'], function () {
+    Route::get('login', [LoginController::class,'getLogin'])->name('get.admin.login');
+    Route::post('login', [LoginController::class,'login'])->name('admin.login');
+});
 
 
 

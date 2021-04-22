@@ -93,7 +93,7 @@
                                   novalidate>
                                 @csrf
                                 <fieldset class="form-group position-relative has-icon-left mb-0">
-                                    <input type="text" name="email" class="form-control form-control-lg input-lg"
+                                    <input type="email" name="email" class="form-control form-control-lg input-lg"
                                            value="{{old('email')}}" id="email" placeholder="أدخل البريد الالكتروني ">
                                     <div class="form-control-position">
                                         <i class="ft-user"></i>
